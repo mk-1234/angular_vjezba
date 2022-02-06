@@ -1,0 +1,13 @@
+<div>
+  <p>User data:</p><br />
+  <p>Username: {{user.username}}</p>
+  <p>E-mail: {{user.email}}</p>
+  <p>Name: {{user.name}}</p>
+</div>
+<br /><hr /><br />
+<p>Posts by {{user.username}} ({{posts.length}})</p>
+<div *ngFor="let post of posts" [ngStyle]="{'border': '1px solid lightgrey', 'padding': '10px'}">
+  by {{post.userId}} at "{{post.timestamp}}"
+  <p [ngStyle]="{'padding-left': '15px'}">{{post.comment}}</p>
+</div>
+<a [routerLink]="['']">Back</a>

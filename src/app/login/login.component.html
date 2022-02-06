@@ -1,0 +1,16 @@
+<h2>Login</h2>
+<form [formGroup]="loginForm" (submit)="onLogin()">
+  <label for="username">
+    <p>Username</p>
+    <input type="text" id="username" formControlName="username" placeholder="Your username" />
+  </label>
+  <label for="password">
+    <p>Password</p>
+    <input type="password" id="password" formControlName="password" placeholder="Your password" />
+  </label><br />
+  <input id="login" type="submit" value="Login" [disabled]="!loginForm.valid"
+         [ngStyle]="loginForm.valid ? {'color': 'white', 'background-color': 'green'} : {'color': 'grey', 'background-color': '#C1C9C1FF'}"/>
+  <button id="reg" [routerLink]="['../register']">Register</button>
+</form>
+<p *ngIf="errorMsg">{{errorMsg}}</p>
+<button id="back" [routerLink]="['../']">Back to Posts</button>

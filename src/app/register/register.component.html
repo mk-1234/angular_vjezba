@@ -1,0 +1,29 @@
+<h2>Register form:</h2>
+<form [formGroup]="registerForm" (submit)="onSubmit()">
+  <label for="username">
+    <p>Username</p>
+    <input type="text" id="username" formControlName="username" placeholder="Username" />
+  </label>
+  <label for="password">
+    <p>Password</p>
+    <input type="password" id="password" formControlName="password" placeholder="Password" />
+  </label>
+  <label for="repeat-password">
+    <p>Repeat Password</p>
+    <input type="password" id="repeat-password" formControlName="repeat-password" placeholder="Repeat password" />
+  </label>
+  <label for="name">
+    <p>Name</p>
+    <input type="text" id="name" formControlName="name" placeholder="Name" />
+  </label>
+  <label for="email">
+    <p>E-mail</p>
+    <input type="email" id="email" formControlName="email" placeholder="E-mail" />
+  </label>
+  <br />
+  <input id="reg" type="submit" value="Register!" [disabled]="!registerForm.valid"
+         [ngStyle]="registerForm.valid ? {'color': 'white', 'background-color': 'green'} : {'color': 'grey', 'background-color': '#C1C9C1FF'}"/>
+  <br />
+  <a [routerLink]="['../login']">Back to login form</a>
+</form>
+<p *ngIf="wrongPass">The same password must be in both fields!</p>

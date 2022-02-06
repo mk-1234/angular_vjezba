@@ -1,0 +1,33 @@
+<button *ngIf="!authenticated" [routerLink]="['login']" [ngStyle]="{'background-color': 'green'}">Login</button>
+<div *ngIf="authenticated">
+  <p>Welcome <a [routerLink]="['profile']">{{user.username}}</a> ({{user.email}})</p>
+  <button (click)="logout()" [ngStyle]="{'background-color': 'red'}">Logout</button>
+</div>
+<h2>Posts ({{posts.length}}):</h2>
+
+<div *ngFor="let post of posts; let i = index" [ngStyle]="{'border': '1px solid lightgrey', 'padding': '10px'}">
+  by {{post.userId}} at "{{post.timestamp}}"
+  <div *ngIf="editingIndex != i">
+    <p [ngStyle]="{'padding-left': '15px'}">{{post.comment}}</p>
+  </div>
+  <div *ngIf="editingIndex == i">
+    <textarea [(ngModel)]="editingPost.comment" [ngStyle]="{'margin': '15px'}"></textarea>
+  </div>
+  <div *ngIf="post.userId == user.username">
+    <button (click)="deletePost(i)" [ngStyle]="delStyle()">Delete</button>
+    <button *ngIf="editingIndex != i" (click)="setEdit(i)" [ngStyle]="editStyle()">Edit</button>
+    <button *ngIf="editingIndex == i" (click)="doneEditing(i)" [ngStyle]="editStyle()">Done Editing</button>
+  </div>
+</div>
+<div *ngIf="authenticated">
+  <button class="addBtn" (click)="addingPost = true" *ngIf="addingPost == false" [ngStyle]="{'background-color': 'green'}">Add Post</button>
+  <button class="addBtn" (click)="addingPost = false" *ngIf="addingPost == true" [ngStyle]="{'background-color': 'red'}">Cancel</button>
+  <div [hidden]="addingPost == false">
+    <label for="comm">Comment: <br />
+      <textarea id="comm" [(ngModel)]="newPost.comment"></textarea>
+    </label>
+    <br />
+    <button (click)="addPost()" [ngStyle]="sendStyle()" [disabled]="!newPost.comment">Send</button>
+  </div>
+</div>
+

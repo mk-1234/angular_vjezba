@@ -1,0 +1,35 @@
+* {
+  font-family: Arial;
+  font-size: 14px;
+}
+
+button {
+  padding: 7px 15px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.addBtn {
+  margin: 10px 0;
+}
+
+label {
+  font-weight: bold;
+}
+
+textarea {
+  width: 300px;
+  height: 120px;
+  padding: 10px;
+  border-color: lightgrey;
+  border-radius: 5px;
+  resize: vertical;
+}
+
+input {
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  padding: 5px 10px;
+  width: 300px;
+}

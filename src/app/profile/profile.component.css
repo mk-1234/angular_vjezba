@@ -1,0 +1,25 @@
+* {
+  font-family: Arial;
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 15px 30px;
+  margin-top: 20px;
+  margin-left: 35px;
+  background-color: lightpink;
+  border: 2px solid hotpink;
+  border-radius: 5px;
+  color: #4f0d20;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+a:hover {
+  background-color: hotpink;
+  border: 2px solid #4f0d20;
+  border-radius: 10px;
+  color: white;
+}

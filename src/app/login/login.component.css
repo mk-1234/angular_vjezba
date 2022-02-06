@@ -1,0 +1,42 @@
+* {
+  font-family: Arial;
+  font-size: 14px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+input, #reg {
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  padding: 5px 10px;
+  width: 300px;
+}
+
+#login {
+  width: 100px;
+  font-size: 18px;
+  background-color: green;
+  margin: 20px 30px;
+}
+
+#reg {
+  width: 100px;
+  font-size: 18px;
+  background-color: orange;
+  margin: 20px;
+  color: white;
+}
+
+#back {
+  margin-top: 30px;
+  margin-left: 20px;
+  width: 150px;
+  padding: 15px 25px;
+  background-color: darkviolet;
+  color: white;
+  border-radius: 10px;
+}
+
+
